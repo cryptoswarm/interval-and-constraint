@@ -29,13 +29,13 @@ public class Intervalle {
      *            pr&eacute;alable : debut < fin
      *            </p>
      */
-    private  int debut; // debut doit appartenir a l'intervalle
-    private  int fin;   // fin n'appartient pas a l'intervalle
+    private     int debut; // debut doit appartenir a l'intervalle
+    private   int fin;   // fin n'appartient pas a l'intervalle
 
-    public Intervalle( int d, int f ){
+     public  Intervalle( int debut, int fin ){
         // A FAIRE
-        this.debut = d;
-        this.fin = f;
+        this.debut = debut;
+        this.fin = fin;
     }
 
     /**
@@ -56,6 +56,7 @@ public class Intervalle {
         }
         return siAppartient;
     }
+
 
     public void setDebut(int d){
         this.debut = d;
@@ -80,7 +81,7 @@ public class Intervalle {
 
         int start=0;
         int end=0;
-        Contrainte c = new Contrainte(start, end);
+        Contrainte c = new Contrainte();
 
         intervalle = new Intervalle(debut, fin);
 
@@ -98,57 +99,71 @@ public class Intervalle {
         }else {
             end= intervalle.fin;
         }
-        return  new Intervalle(start, end);
+        //return  new Intervalle(start, end);
+        return c;
     }
 
-
+/**
     Intervalle union(Intervalle a, Intervalle b) {
         int l = (a.debut < b.fin) ? a.debut : b.fin;
         int max = (a.fin > b.fin) ? a.fin : b.fin;
         return new Intervalle(l, max);
     }
-
+ **/
 
 
     /**
      * Construis l'intersection de deux intervalles.
-     * <p>
-     * Soit \(a_1\) l'intervalle r&eacute;f&eacute;r&eacute; par {@code this} et
-     * \(a_2\) l'intervalle en argument.
-     * Une {@code Contrainte} \(c\) est construite de telle sorte que le pr&eacute;dicat
-     * suivant, soit vrai :
-     * </p><p>
-     * \(\forall n, n \in c \leftrightarrow ( n \in a_1 \wedge n \in a_2 )\)
-     * </p>
+     * Soit a1 l'intervalle référé par this et a2 l'intervalle en argument.
+     * Une Contrainte c est construite de telle sorte que le prédicat suivant, soit vrai :
+     * ∀ n , n ∈ c ↔ ( n ∈ a1 ∧ n ∈ a2 )
+     *
      * @param intervalle l'intervalle avec laquelle l'intersection est faite.
-     *                   <p>
-     *                   pr&eacute;alable : {@code null != intervalle}
-     *                   </p>
-     * @return une {@code Constrainte} contenant le r&eacute;sultat.  Cette
-     *         {@code Contrainte} peut contenir 0 ou 1 intervalle.
+     *
+     *                  préalable : null != intervalle
+     *
+     * @return une Constrainte contenant le résultat. Cette Contrainte peut contenir 0 ou 1 intervalle.
      */
     public Contrainte intersection( Intervalle intervalle ){
-        // A FAIRE
-        return null;
+        int start=0;
+        int end=0;
+        Contrainte c = new Contrainte();
+
+        if(intervalle!=null) {
+
+
+
+            intervalle = new Intervalle(debut, fin);
+
+
+
+            if (intervalle.fin < this.debut || intervalle.debut > this.fin) {
+                // il n ya pas d'intersection
+                // isEmpty();
+            }
+
+            // }else
+            if (this.debut <= intervalle.fin && intervalle.debut <= this.fin) {
+
+                start = this.debut;
+                end = intervalle.debut;
+            }
+        }
+
+        return c;
+
     }
 
 
     /**
      * Soustrais un intervalle à l'intervalle courant.
-     * <p>
-     * Soit \(a_1\) l'intervalle r&eacute;f&eacute;r&eacute; par {@code this} et
-     * \(a_2\) l'intervalle en argument.
-     * Une {@code Contrainte} \(c\) est construite de telle sorte que le pr&eacute;dicat
-     * suivant, soit vrai :
-     * </p><p>
-     * \(\forall n, n \in c \leftrightarrow ( n \in a_1 \wedge n \notin a_2 )\)
-     * </p>
-     * @param intervalle l'intervalle soustrait de l'intervalle courant.
-     *                   <p>
-     *                   pr&eacute;alable : {@code null != intervalle}
-     *                   </p>
-     * @return une {@code Constrainte} contenant le r&eacute;sultat.  Cette
-     *         {@code Contrainte} peut contenir 0, 1 ou 2 intervalles.
+     * Soit a1 l'intervalle référé par this et a2 l'intervalle en argument.
+     * Une Contrainte c est construite de telle sorte que le prédicat suivant, soit vrai :
+     *
+     * ∀ n , n ∈ c ↔ (n ∈ a1 ∧ n ∉ a2)
+     * @param intervalle - l'intervalle soustrait de l'intervalle courant.
+     * préalable : null != intervalle
+     *@return  une Constrainte contenant le résultat. Cette Contrainte peut contenir 0, 1 ou 2 intervalles.
      */
     public Contrainte soustraction( Intervalle intervalle ){
         // A FAIRE
@@ -156,26 +171,59 @@ public class Intervalle {
     }
 
 
-    public static boolean equal(Intervalle i1, Intervalle i2){
+    /**
+     * @param a2
+     * @return
+     */
 
-        Intervalle i1 = new Intervalle(debut, fin);
+    public  boolean equals(Intervalle a2){
+        boolean resultat=false;
+        int start=0;
+        int end=0;
 
-        boolean resultat;
+        a2 = new Intervalle(start, end);
 
-        return resultat;
+
+        Intervalle a1 = new Intervalle(this.debut, this.fin);
+
+        if(a1.debut == a1.debut && a1.fin == a1.fin) {
+            resultat = true;
+        }
+
+        if(a1.debut == start && a1.fin == end){
+            resultat=true;
+        }else{
+            resultat=false;
+        }
+
+
+        return   resultat;
+
+        }
+
+    /**
+     *
+     * @return
+     */
+/**
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || !(o instanceof  Intervalle))
+            return false;
+        if(this == o)
+            return true;
+        Intervalle that = (Intervalle)o;
+        return left.val == that.left.val && left.isClosed == that.left.isClosed;
     }
 
+**/
 
-
-public String toString(){
+    public String toString(){
 
         return  "[" + debut + ","+
-                fin+ "]";
+                fin+ "[";
     }
 
 }
 
-
-//ajouter une methode equal qui compare deux intervalles
-//ajouter un toString
 

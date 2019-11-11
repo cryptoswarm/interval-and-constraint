@@ -3,10 +3,7 @@
  * -locale fr -header '<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>'
  */
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.concurrent.Callable;
+import java.util.*;
 
 /**
  * La classe {@code Contrainte} est utilis&eacute; pour construire des ensembles
@@ -39,13 +36,11 @@ public class Contrainte extends ArrayList< Intervalle > {
      * Construis une liste vide.
      * </p>
      */
-    private Intervalle start;
-    private Intervalle end;
+
+    private  Contrainte contrainte1;
 
     public Contrainte(){
-        this.start =null;
-        this.end =null;
-        //Contrainte  = new ArrayList();
+       super();
     }
     //public Range(T start, T end) {  this(start, end, null); }
 
@@ -58,19 +53,31 @@ public class Contrainte extends ArrayList< Intervalle > {
      * @param collection collection - La Collection contenant les éléments utilisés pour construire la Contrainte.
      *
      * @throws java.lang.NullPointerException - si l'argument collection est null.
-     */
+*/
     public Contrainte( Collection< Intervalle > collection ) { // the collection is an interface, cant be instantiated
-            collection;
 
-        if(start == null){
+        if (collection == null) {
             throw new NullPointerException("collection est vide");
         }
-        // Constructeur Construit une liste d'Intervalle contenant tous les éléments de la Collection.
+
+        collection = new ArrayList<Intervalle>();
+
     }
 
 
+        // Constructeur Construit une liste d'Intervalle contenant tous les éléments de la Collection.
+//    }
     /**
-     * public boolean add(Intervalle intervalle)
+     * public ArrayList(Collection<? extends E> c)
+     * Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator.
+     * Parameters:
+     * c - the collection whose elements are to be placed into this list
+     * Throws:
+     * NullPointerException - if the specified collection is null
+     */
+
+
+    /**
      * Ajoute un Intervalle dans la Contrainte.
      * Ajoute un Intervalle. Cet ajout ne doit pas briser les invariants de la Constrainte.
      *
@@ -93,7 +100,10 @@ public class Contrainte extends ArrayList< Intervalle > {
         // A FAIRE
         //appeler la methode de l'array list en utilisant le super par ex : super.add parcequ'il herite de l'array list
         //
-        return true;
+        return  super.add(intervalle);
+
+       // return contrainte1.add(intervalle);
+
     }
 
 
@@ -138,8 +148,17 @@ public class Contrainte extends ArrayList< Intervalle > {
      Returns: |[v|v∈c]|
      */
     public int taille(){
-        // A FAIRE
-        return 0;
+
+
+
+      if(size() == 0) {
+          return 0;
+      }else{
+          return contrainte1.size();
+      }
+
+
+
     }
 
 
@@ -159,8 +178,36 @@ public class Contrainte extends ArrayList< Intervalle > {
      */
     public Contrainte union( Contrainte contrainte ){
         // A FAIRE
-        return null;
-    }
+        //return null;
+        //public ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
+
+        Contrainte result = new Contrainte();
+            //ArrayList<Contrainte> result = new ArrayList<Contrainte>();
+        /**
+
+            for(Intervalle interval: contrainte){
+                if(interval.fin < contrainte.debut){
+                    result.add(interval);
+                }else if(interval.debut > contrainte.fin){
+                    result.add(contrainte);
+                    newInterval = interval;
+                }else if(interval.end >= newInterval.start || interval.start <= newInterval.end){
+                    newInterval = new Interval(Math.min(interval.start, newInterval.start), Math.max(newInterval.end, interval.end));
+                }
+            }
+
+            result.add(newInterval);
+
+
+        }
+
+ **/
+        return result;
+   }
+
+
+   //     }
+
 
 
     /**
