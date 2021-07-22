@@ -1,5 +1,3 @@
-import constraintes.Contrainte;
-import intervalls.Intervalle;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -268,7 +266,7 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle15() {
-        List<Intervalle> xs =
+        List< Intervalle > xs =
                 Arrays.asList( i_1_5, i_8_9 );
         Contrainte c = new Contrainte( xs );
         List< Intervalle > r =
@@ -413,17 +411,20 @@ class ContrainteTest {
     void testRemoveIntervalle1() {
         Contrainte c = new Contrainte();
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertTrue( c.isEmpty() );
     }
 
     @Test
     void testRemoveIntervalle2() {
-        List< Intervalle > xs =  Arrays.asList( i_1_2 );
+        List< Intervalle > xs =
+                Arrays.asList( i_1_2 );
         Contrainte c = new Contrainte( xs );
-        List< Intervalle > r = Arrays.asList( i_1_2 );
-        c.removeInterval( i_4_7 );
+        List< Intervalle > r =
+                Arrays.asList( i_1_2 );
+
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
@@ -436,7 +437,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_1_4 );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
@@ -449,18 +450,20 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_1_4 );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
 
     @Test
     void testRemoveIntervalle5() {
-        List< Intervalle > xs =  Arrays.asList( i_1_9 );
+        List< Intervalle > xs =
+                Arrays.asList( i_1_9 );
         Contrainte c = new Contrainte( xs );
-        List< Intervalle > r = Arrays.asList( i_1_4, i_7_9 );
+        List< Intervalle > r =
+                Arrays.asList( i_1_4, i_7_9 );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
@@ -471,7 +474,7 @@ class ContrainteTest {
                 Arrays.asList( i_4_5 );
         Contrainte c = new Contrainte( xs );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertTrue( c.isEmpty() );
     }
@@ -482,7 +485,7 @@ class ContrainteTest {
                 Arrays.asList( i_4_7 );
         Contrainte c = new Contrainte( xs );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertTrue( c.isEmpty() );
     }
@@ -495,7 +498,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_7_9 );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
@@ -508,7 +511,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_7_9 );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
@@ -521,7 +524,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_8_9 );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
@@ -534,7 +537,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_1_2, i_8_9 );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
@@ -547,7 +550,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_1_4, i_8_9 );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
@@ -560,7 +563,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_1_2, i_7_9 );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
@@ -573,7 +576,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_1_4, i_7_9 );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
@@ -586,7 +589,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_1_4, i_8_9 );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
@@ -599,7 +602,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_1_2, i_7_9 );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
@@ -612,7 +615,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_1_4, i_7_9 );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertIterableEquals( r, c );
     }
@@ -625,7 +628,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_6_7 );
 
-        c.removeInterval( i_1_6 );
+        c.remove( i_1_6 );
 
         assertIterableEquals( r, c );
     }
@@ -636,7 +639,7 @@ class ContrainteTest {
                 Arrays.asList( i_4_5, i_6_7 );
         Contrainte c = new Contrainte( xs );
 
-        c.removeInterval( i_1_7 );
+        c.remove( i_1_7 );
 
         assertTrue( c.isEmpty() );
     }
@@ -647,7 +650,7 @@ class ContrainteTest {
                 Arrays.asList( i_4_5, i_6_7 );
         Contrainte c = new Contrainte( xs );
 
-        c.removeInterval( i_1_8 );
+        c.remove( i_1_8 );
 
         assertTrue( c.isEmpty() );
     }
@@ -660,7 +663,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_6_7 );
 
-        c.removeInterval( i_4_6 );
+        c.remove( i_4_6 );
 
         assertIterableEquals( r, c );
     }
@@ -671,7 +674,7 @@ class ContrainteTest {
                 Arrays.asList( i_4_5, i_6_7 );
         Contrainte c = new Contrainte( xs );
 
-        c.removeInterval( i_4_7 );
+        c.remove( i_4_7 );
 
         assertTrue( c.isEmpty() );
     }
@@ -682,7 +685,7 @@ class ContrainteTest {
                 Arrays.asList( i_4_5, i_6_7 );
         Contrainte c = new Contrainte( xs );
 
-        c.removeInterval( i_4_8 );
+        c.remove( i_4_8 );
 
         assertTrue( c.isEmpty() );
     }
@@ -695,7 +698,7 @@ class ContrainteTest {
         List< Intervalle > r =
                 Arrays.asList( i_4_5 );
 
-        c.removeInterval( i_5_7 );
+        c.remove( i_5_7 );
 
         assertIterableEquals( r, c );
     }
@@ -706,7 +709,7 @@ class ContrainteTest {
                 Arrays.asList( i_4_5, i_6_7 );
         Contrainte c = new Contrainte( xs );
 
-        c.removeInterval( i_4_8 );
+        c.remove( i_4_8 );
 
         assertTrue( c.isEmpty() );
     }

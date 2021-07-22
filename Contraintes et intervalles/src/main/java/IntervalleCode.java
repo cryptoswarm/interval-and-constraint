@@ -1,7 +1,7 @@
 /**
- *public class Intervalle {
+ *public class intervalls.Intervalle {
  *
- *     public Intervalle (int debut, int fin){};
+ *     public intervalls.Intervalle (int debut, int fin){};
  *
  *
  *
@@ -18,7 +18,7 @@
  *    -------             -------   -------
  *    [3..8[              [3..9[   [1..2[ [3..6[   //[1..2[ [3..6[   est une forme de contrainte.
  *
- *public Contrainte union(Intervalle i){}
+ *public constraintes.Contrainte union(intervalls.Intervalle i){}
         *
         *
         *     /*
@@ -37,7 +37,7 @@
  *  ---------
  *  [3.4.5.6[
         *
-        *public Contrainte Intersection(Intervalle i){return<Intervalle>;}
+        *public constraintes.Contrainte Intersection(intervalls.Intervalle i){return<intervalls.Intervalle>;}
         *
         *
         *
@@ -51,7 +51,7 @@
  *
  *
         *
-        *public Contrainte Soustraction(Intervalle i){}
+        *public constraintes.Contrainte Soustraction(intervalls.Intervalle i){}
         *
         *
         *}
