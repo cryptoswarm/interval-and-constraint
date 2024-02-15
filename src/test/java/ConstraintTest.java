@@ -5,79 +5,77 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ContrainteTest {
-    public static final Intervalle i_1_2 = new Intervalle( 1, 2 );
-    public static final Intervalle i_1_3 = new Intervalle( 1, 3 );
-    public static final Intervalle i_1_4 = new Intervalle( 1, 4 );
-    public static final Intervalle i_1_5 = new Intervalle( 1, 5 );
-    public static final Intervalle i_1_6 = new Intervalle( 1, 6 );
-    public static final Intervalle i_1_7 = new Intervalle( 1, 7 );
-    public static final Intervalle i_1_8 = new Intervalle( 1, 8 );
-    public static final Intervalle i_1_9 = new Intervalle( 1, 9 );
-    public static final Intervalle i_1_10 = new Intervalle( 1, 10 );
-    public static final Intervalle i_2_3 = new Intervalle( 2, 3 );
-    public static final Intervalle i_2_5 = new Intervalle( 2, 5 );
-    public static final Intervalle i_2_10 = new Intervalle( 2, 10 );
-    public static final Intervalle i_3_4 = new Intervalle( 3, 4 );
-    public static final Intervalle i_4_5 = new Intervalle( 4, 5 );
-    public static final Intervalle i_4_6 = new Intervalle( 4, 6 );
-    public static final Intervalle i_4_7 = new Intervalle( 4, 7 );
-    public static final Intervalle i_4_8 = new Intervalle( 4, 8 );
-    public static final Intervalle i_4_9 = new Intervalle( 4, 9 );
-    public static final Intervalle i_5_6 = new Intervalle( 5, 6 );
-    public static final Intervalle i_5_7 = new Intervalle( 5, 7 );
-    public static final Intervalle i_6_7 = new Intervalle( 6, 7 );
-    public static final Intervalle i_6_8 = new Intervalle( 6, 8 );
-    public static final Intervalle i_6_9 = new Intervalle( 6, 9 );
-    public static final Intervalle i_7_8 = new Intervalle( 7, 8 );
-    public static final Intervalle i_7_9 = new Intervalle( 7, 9 );
-    public static final Intervalle i_8_9 = new Intervalle( 8, 9 );
-    public static final Intervalle i_9_10 = new Intervalle( 9, 10 );
-    public static final Intervalle i_10_11 = new Intervalle( 10, 11 );
-    public static final Intervalle i_11_12 = new Intervalle( 11, 12 );
-    public static final Intervalle i_12_13 = new Intervalle( 12, 13 );
-    public static final Intervalle i_14_15 = new Intervalle( 14, 15 );
+class ConstraintTest {
+    public static final Interval i_1_2 = new Interval( 1, 2 );
+    public static final Interval i_1_3 = new Interval( 1, 3 );
+    public static final Interval i_1_4 = new Interval( 1, 4 );
+    public static final Interval i_1_5 = new Interval( 1, 5 );
+    public static final Interval i_1_6 = new Interval( 1, 6 );
+    public static final Interval i_1_7 = new Interval( 1, 7 );
+    public static final Interval i_1_8 = new Interval( 1, 8 );
+    public static final Interval i_1_9 = new Interval( 1, 9 );
+    public static final Interval i_1_10 = new Interval( 1, 10 );
+    public static final Interval i_2_3 = new Interval( 2, 3 );
+    public static final Interval i_2_5 = new Interval( 2, 5 );
+    public static final Interval i_2_10 = new Interval( 2, 10 );
+    public static final Interval i_3_4 = new Interval( 3, 4 );
+    public static final Interval i_4_5 = new Interval( 4, 5 );
+    public static final Interval i_4_6 = new Interval( 4, 6 );
+    public static final Interval i_4_7 = new Interval( 4, 7 );
+    public static final Interval i_4_8 = new Interval( 4, 8 );
+    public static final Interval i_4_9 = new Interval( 4, 9 );
+    public static final Interval i_5_6 = new Interval( 5, 6 );
+    public static final Interval i_5_7 = new Interval( 5, 7 );
+    public static final Interval i_6_7 = new Interval( 6, 7 );
+    public static final Interval i_6_8 = new Interval( 6, 8 );
+    public static final Interval i_6_9 = new Interval( 6, 9 );
+    public static final Interval i_7_8 = new Interval( 7, 8 );
+    public static final Interval i_7_9 = new Interval( 7, 9 );
+    public static final Interval i_8_9 = new Interval( 8, 9 );
+    public static final Interval i_9_10 = new Interval( 9, 10 );
+    public static final Interval i_10_11 = new Interval( 10, 11 );
+    public static final Interval i_11_12 = new Interval( 11, 12 );
+    public static final Interval i_12_13 = new Interval( 12, 13 );
+    public static final Interval i_14_15 = new Interval( 14, 15 );
 
     @Test
     void testContrainte1() {
-        Contrainte c = new Contrainte();
+        Constraint c = new Constraint();
 
         assertTrue( c.isEmpty() );
     }
 
     @Test
     void testContrainteCollectionOfIntervalle1() {
-        List< Intervalle > xs =
-                Arrays.asList( i_1_2 );
-        Contrainte c = new Contrainte( xs );
+        List<Interval> xs = Arrays.asList( i_1_2 );
+        Constraint c = new Constraint( xs );
 
         assertIterableEquals( xs, c );
     }
 
     @Test
     void testContrainteCollectionOfIntervalle2() {
-        List< Intervalle > xs =
-                Arrays.asList( i_1_2, i_4_5 );
-        Contrainte c = new Contrainte( xs );
+        List<Interval> xs = Arrays.asList( i_1_2, i_4_5 );
+        Constraint c = new Constraint( xs );
 
         assertIterableEquals( xs, c );
     }
 
     @Test
     void testContrainteCollectionOfIntervalle3() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_2, i_4_5, i_7_8 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         assertIterableEquals( xs, c );
     }
 
     @Test
     void testContrainteCollectionOfIntervalle4() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_7_8, i_4_5, i_1_2 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_2, i_4_5, i_7_8 );
 
         assertIterableEquals( r, c );
@@ -85,8 +83,8 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle1() {
-        Contrainte c = new Contrainte();
-        List< Intervalle > r =
+        Constraint c = new Constraint();
+        List<Interval> r =
                 Arrays.asList( i_4_7 );
 
         c.add( i_4_7 );
@@ -96,10 +94,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle2() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_2 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_2, i_4_7 );
 
         c.add( i_4_7 );
@@ -109,10 +107,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle3() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_4 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_7 );
 
         c.add( i_4_7 );
@@ -122,10 +120,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle4() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_7 );
 
         c.add( i_4_7 );
@@ -135,10 +133,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle5() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_9 );
 
         c.add( i_4_7 );
@@ -148,10 +146,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle6() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_4_7 );
 
         c.add( i_4_7 );
@@ -161,10 +159,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle7() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_4_7 );
 
         c.add( i_4_7 );
@@ -174,10 +172,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle8() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_4_9 );
 
         c.add( i_4_7 );
@@ -187,10 +185,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle9() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_7_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_4_9 );
 
         c.add( i_4_7 );
@@ -200,10 +198,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle10() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_8_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_4_7, i_8_9 );
 
         c.add( i_4_7 );
@@ -213,10 +211,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle11() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_2, i_8_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_2, i_4_7, i_8_9 );
 
         c.add( i_4_7 );
@@ -226,10 +224,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle12() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_4, i_8_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_7, i_8_9 );
 
         c.add( i_4_7 );
@@ -239,10 +237,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle13() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_2, i_7_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_2, i_4_9 );
 
         c.add( i_4_7 );
@@ -252,10 +250,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle14() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_4, i_7_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_9 );
 
         c.add( i_4_7 );
@@ -265,10 +263,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle15() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_5, i_8_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_7, i_8_9 );
 
         c.add( i_4_7 );
@@ -278,10 +276,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle16() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_2, i_6_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_2, i_4_9 );
 
         c.add( i_4_7 );
@@ -291,10 +289,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle17() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_5, i_6_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_9 );
 
         c.add( i_4_7 );
@@ -304,10 +302,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle18() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_7 );
 
         c.add( i_1_6 );
@@ -317,10 +315,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle19() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_7 );
 
         c.add( i_1_7 );
@@ -330,10 +328,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle20() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_8 );
 
         c.add( i_1_8 );
@@ -343,10 +341,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle21() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_4_7 );
 
         c.add( i_4_6 );
@@ -356,10 +354,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle22() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_4_7 );
 
         c.add( i_4_7 );
@@ -369,10 +367,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle23() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_4_8 );
 
         c.add( i_4_8 );
@@ -382,10 +380,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle24() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_4_7 );
 
         c.add( i_5_7 );
@@ -395,10 +393,10 @@ class ContrainteTest {
 
     @Test
     void testAddIntervalle25() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_4_8 );
 
         c.add( i_4_8 );
@@ -408,7 +406,7 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle1() {
-        Contrainte c = new Contrainte();
+        Constraint c = new Constraint();
 
         c.remove( i_4_7 );
 
@@ -417,10 +415,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle2() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_2 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_2 );
 
         c.remove( i_4_7 );
@@ -430,10 +428,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle3() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_4 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_4 );
 
         c.remove( i_4_7 );
@@ -443,10 +441,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle4() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_4 );
 
         c.remove( i_4_7 );
@@ -456,10 +454,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle5() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_4, i_7_9 );
 
         c.remove( i_4_7 );
@@ -469,9 +467,9 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle6() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         c.remove( i_4_7 );
 
@@ -480,9 +478,9 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle7() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_7 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         c.remove( i_4_7 );
 
@@ -491,10 +489,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle8() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_7_9 );
 
         c.remove( i_4_7 );
@@ -504,10 +502,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle9() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_7_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_7_9 );
 
         c.remove( i_4_7 );
@@ -517,10 +515,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle10() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_8_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_8_9 );
 
         c.remove( i_4_7 );
@@ -530,10 +528,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle11() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_2, i_8_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_2, i_8_9 );
 
         c.remove( i_4_7 );
@@ -543,10 +541,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle12() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_4, i_8_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_4, i_8_9 );
 
         c.remove( i_4_7 );
@@ -556,10 +554,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle13() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_2, i_7_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_2, i_7_9 );
 
         c.remove( i_4_7 );
@@ -569,10 +567,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle14() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_4, i_7_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_4, i_7_9 );
 
         c.remove( i_4_7 );
@@ -582,10 +580,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle15() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_5, i_8_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_4, i_8_9 );
 
         c.remove( i_4_7 );
@@ -595,10 +593,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle16() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_2, i_6_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_2, i_7_9 );
 
         c.remove( i_4_7 );
@@ -608,10 +606,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle17() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_5, i_6_9 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_1_4, i_7_9 );
 
         c.remove( i_4_7 );
@@ -621,10 +619,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle18() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_6_7 );
 
         c.remove( i_1_6 );
@@ -634,9 +632,9 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle19() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         c.remove( i_1_7 );
 
@@ -645,9 +643,9 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle20() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         c.remove( i_1_8 );
 
@@ -656,10 +654,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle21() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_6_7 );
 
         c.remove( i_4_6 );
@@ -669,9 +667,9 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle22() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         c.remove( i_4_7 );
 
@@ -680,9 +678,9 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle23() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         c.remove( i_4_8 );
 
@@ -691,10 +689,10 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle24() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
-        List< Intervalle > r =
+        Constraint c = new Constraint( xs );
+        List<Interval> r =
                 Arrays.asList( i_4_5 );
 
         c.remove( i_5_7 );
@@ -704,9 +702,9 @@ class ContrainteTest {
 
     @Test
     void testRemoveIntervalle25() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_5, i_6_7 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         c.remove( i_4_8 );
 
@@ -715,16 +713,15 @@ class ContrainteTest {
 
     @Test
     void testAppartient1() {
-        Contrainte c = new Contrainte();
+        Constraint c = new Constraint();
 
         assertFalse( c.appartient( 2 ) );
     }
 
     @Test
     void testAppartient2() {
-        List< Intervalle > xs =
-                Arrays.asList( i_4_7 );
-        Contrainte c = new Contrainte( xs );
+        List<Interval> xs = Arrays.asList( i_4_7 );
+        Constraint c = new Constraint( xs );
 
         assertFalse( c.appartient( 3 ) );
         assertTrue( c.appartient( 4 ) );
@@ -736,9 +733,9 @@ class ContrainteTest {
 
     @Test
     void testAppartient3() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_4, i_6_9 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         assertFalse( c.appartient( 0 ) );
         assertTrue( c.appartient( 1 ) );
@@ -754,9 +751,9 @@ class ContrainteTest {
 
     @Test
     void testAppartient4() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_4, i_5_7 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         assertTrue( c.appartient( 3 ) );
         assertFalse( c.appartient( 4 ) );
@@ -765,9 +762,9 @@ class ContrainteTest {
 
     @Test
     void testAppartient5() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_2, i_4_5, i_7_8 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         assertFalse( c.appartient( 3 ) );
         assertTrue( c.appartient( 4 ) );
@@ -777,73 +774,73 @@ class ContrainteTest {
 
     @Test
     void testTaille1() {
-        Contrainte c = new Contrainte();
+        Constraint c = new Constraint();
 
         assertEquals( 0, c.taille() );
     }
 
     @Test
     void testTaille2() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_4_7 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         assertEquals( 3, c.taille() );
     }
 
     @Test
     void testTaille3() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_2, i_4_7 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         assertEquals( 4, c.taille() );
     }
 
     @Test
     void testTaille4() {
-        List< Intervalle > xs =
+        List<Interval> xs =
                 Arrays.asList( i_1_2, i_4_7, i_8_9 );
-        Contrainte c = new Contrainte( xs );
+        Constraint c = new Constraint( xs );
 
         assertEquals( 5, c.taille() );
     }
 
     @Test
     void testIntersection1() {
-        Contrainte c1 = new Contrainte();
-        Contrainte c2 = new Contrainte();
+        Constraint c1 = new Constraint();
+        Constraint c2 = new Constraint();
 
         assertTrue( c1.intersection( c2 ).isEmpty() );
     }
 
     @Test
     void testIntersection2() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_4_7 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte();
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint();
 
         assertTrue( c1.intersection( c2 ).isEmpty() );
     }
 
     @Test
     void testIntersection3() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_4_7 );
-        Contrainte c1 = new Contrainte();
-        Contrainte c2 = new Contrainte( xs1 );
+        Constraint c1 = new Constraint();
+        Constraint c2 = new Constraint( xs1 );
 
         assertTrue( c1.intersection( c2 ).isEmpty() );
     }
 
     @Test
     void testIntersection4() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_4_7 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs1 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs1 );
+        List<Interval> r =
                 Arrays.asList( i_4_7 );
 
         assertIterableEquals( r, c1.intersection( c2 ) );
@@ -851,49 +848,49 @@ class ContrainteTest {
 
     @Test
     void testIntersection5() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_2_3 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_1_2 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
 
         assertTrue( c1.intersection( c2 ).isEmpty() );
     }
 
     @Test
     void testIntersection6() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_1_2, i_3_4 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_2_3, i_4_5 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
 
         assertTrue( c1.intersection( c2 ).isEmpty() );
     }
 
     @Test
     void testIntersection7() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_1_2, i_5_6 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_3_4, i_7_8 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
 
         assertTrue( c1.intersection( c2 ).isEmpty() );
     }
 
     @Test
     void testIntersection8() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_1_3, i_4_6, i_7_8 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_2_5, i_9_10 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_2_3, i_4_5 );
 
         assertIterableEquals( r, c1.intersection( c2 ) );
@@ -901,13 +898,13 @@ class ContrainteTest {
 
     @Test
     void testIntersection9() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_1_3, i_4_5, i_6_7, i_8_9, i_11_12 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_2_10 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_2_3, i_4_5, i_6_7, i_8_9 );
 
         assertIterableEquals( r, c1.intersection( c2 ) );
@@ -915,13 +912,13 @@ class ContrainteTest {
 
     @Test
     void testIntersection10() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_2_3, i_4_6, i_7_9, i_10_11, i_12_13 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_1_5, i_6_8, i_14_15 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_2_3, i_4_5, i_7_8 );
 
         assertIterableEquals( r, c1.intersection( c2 ) );
@@ -929,19 +926,19 @@ class ContrainteTest {
 
     @Test
     void testUnion1() {
-        Contrainte c1 = new Contrainte();
-        Contrainte c2 = new Contrainte();
+        Constraint c1 = new Constraint();
+        Constraint c2 = new Constraint();
 
         assertTrue( c1.union( c2 ).isEmpty() );
     }
 
     @Test
     void testUnion2() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_4_7 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte();
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint();
+        List<Interval> r =
                 Arrays.asList( i_4_7 );
 
         assertIterableEquals( r, c1.union( c2 ) );
@@ -949,11 +946,11 @@ class ContrainteTest {
 
     @Test
     void testUnion3() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_4_7 );
-        Contrainte c1 = new Contrainte();
-        Contrainte c2 = new Contrainte( xs1 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint();
+        Constraint c2 = new Constraint( xs1 );
+        List<Interval> r =
                 Arrays.asList( i_4_7 );
 
         assertIterableEquals( r, c1.union( c2 ) );
@@ -961,11 +958,11 @@ class ContrainteTest {
 
     @Test
     void testUnion4() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_4_7 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs1 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs1 );
+        List<Interval> r =
                 Arrays.asList( i_4_7 );
 
         assertIterableEquals( r, c1.union( c2 ) );
@@ -973,13 +970,13 @@ class ContrainteTest {
 
     @Test
     void testUnion5() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_2_3 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_1_2 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_1_3 );
 
         assertIterableEquals( r, c1.union( c2 ) );
@@ -987,13 +984,13 @@ class ContrainteTest {
 
     @Test
     void testUnion6() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_1_2, i_3_4 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_2_3, i_4_5 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_1_5 );
 
         assertIterableEquals( r, c1.union( c2 ) );
@@ -1001,13 +998,13 @@ class ContrainteTest {
 
     @Test
     void testUnion7() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_1_2, i_5_6 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_3_4, i_7_8 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_1_2, i_3_4, i_5_6, i_7_8 );
 
         assertIterableEquals( r, c1.union( c2 ) );
@@ -1015,13 +1012,13 @@ class ContrainteTest {
 
     @Test
     void testUnion8() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_1_3, i_4_6, i_7_8 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_2_5, i_9_10 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_1_6, i_7_8, i_9_10 );
 
         assertIterableEquals( r, c1.union( c2 ) );
@@ -1029,13 +1026,13 @@ class ContrainteTest {
 
     @Test
     void testUnion9() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_1_3, i_4_5, i_6_7, i_8_9, i_11_12 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_2_10 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_1_10, i_11_12 );
 
         assertIterableEquals( r, c1.union( c2 ) );
@@ -1043,13 +1040,13 @@ class ContrainteTest {
 
     @Test
     void testUnion10() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_2_3, i_4_6, i_7_9, i_10_11, i_12_13 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_1_5, i_6_8, i_14_15 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_1_9, i_10_11, i_12_13, i_14_15 );
 
         assertIterableEquals( r, c1.union( c2 ) );
@@ -1057,19 +1054,19 @@ class ContrainteTest {
 
     @Test
     void testSoustraction1() {
-        Contrainte c1 = new Contrainte();
-        Contrainte c2 = new Contrainte();
+        Constraint c1 = new Constraint();
+        Constraint c2 = new Constraint();
 
         assertTrue( c1.soustraction( c2 ).isEmpty() );
     }
 
     @Test
     void testSoustraction2() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_4_7 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte();
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint();
+        List<Interval> r =
                 Arrays.asList( i_4_7 );
 
         assertIterableEquals( r, c1.soustraction( c2 ) );
@@ -1077,33 +1074,33 @@ class ContrainteTest {
 
     @Test
     void testSoustraction3() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_4_7 );
-        Contrainte c1 = new Contrainte();
-        Contrainte c2 = new Contrainte( xs1 );
+        Constraint c1 = new Constraint();
+        Constraint c2 = new Constraint( xs1 );
 
         assertTrue( c1.soustraction( c2 ).isEmpty() );
     }
 
     @Test
     void testSoustraction4() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_4_7 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs1 );
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs1 );
 
         assertTrue( c1.soustraction( c2 ).isEmpty() );
     }
 
     @Test
     void testSoustraction5() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_2_3 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_1_2 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_2_3 );
 
         assertIterableEquals( r, c1.soustraction( c2 ) );
@@ -1111,13 +1108,13 @@ class ContrainteTest {
 
     @Test
     void testSoustraction6() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_1_2, i_3_4 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_2_3, i_4_5 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_1_2, i_3_4 );
 
         assertIterableEquals( r, c1.soustraction( c2 ) );
@@ -1125,13 +1122,13 @@ class ContrainteTest {
 
     @Test
     void testSoustraction7() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_1_2, i_5_6 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_3_4, i_7_8 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_1_2, i_5_6 );
 
         assertIterableEquals( r, c1.soustraction( c2 ) );
@@ -1139,13 +1136,13 @@ class ContrainteTest {
 
     @Test
     void testSoustraction8() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_1_3, i_4_6, i_7_8 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_2_5, i_9_10 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_1_2, i_5_6, i_7_8 );
 
         assertIterableEquals( r, c1.soustraction( c2 ) );
@@ -1153,13 +1150,13 @@ class ContrainteTest {
 
     @Test
     void testSoustraction9() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_1_3, i_4_5, i_6_7, i_8_9, i_11_12 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_2_10 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_1_2, i_11_12 );
 
         assertIterableEquals( r, c1.soustraction( c2 ) );
@@ -1167,13 +1164,13 @@ class ContrainteTest {
 
     @Test
     void testSoustraction10() {
-        List< Intervalle > xs1 =
+        List<Interval> xs1 =
                 Arrays.asList( i_2_3, i_4_6, i_7_9, i_10_11, i_12_13 );
-        List< Intervalle > xs2 =
+        List<Interval> xs2 =
                 Arrays.asList( i_1_5, i_6_8, i_14_15 );
-        Contrainte c1 = new Contrainte( xs1 );
-        Contrainte c2 = new Contrainte( xs2 );
-        List< Intervalle > r =
+        Constraint c1 = new Constraint( xs1 );
+        Constraint c2 = new Constraint( xs2 );
+        List<Interval> r =
                 Arrays.asList( i_5_6, i_8_9, i_10_11, i_12_13 );
 
         assertIterableEquals( r, c1.soustraction( c2 ) );

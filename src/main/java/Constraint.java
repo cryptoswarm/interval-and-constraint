@@ -29,7 +29,7 @@ import java.util.*;
  */
 @SuppressWarnings("serial")
 
-public class Contrainte extends ArrayList< Intervalle > {
+public class Constraint extends ArrayList<Interval> {
     /**
      * Constructeur
      * <p>
@@ -37,12 +37,11 @@ public class Contrainte extends ArrayList< Intervalle > {
      * </p>
      */
 
-    private  Contrainte contrainte1;
+    private Constraint constraint1;
 
-    public Contrainte(){
+    public Constraint(){
        super();
     }
-    //public Range(T start, T end) {  this(start, end, null); }
 
     /**
      * Constructeur
@@ -54,19 +53,15 @@ public class Contrainte extends ArrayList< Intervalle > {
      *
      * @throws java.lang.NullPointerException - si l'argument collection est null.
 */
-    public Contrainte( Collection< Intervalle > collection ) { // the collection is an interface, cant be instantiated
+    public Constraint(Collection<Interval> collection ) {
 
         if (collection == null) {
-            throw new NullPointerException("collection est vide");
+            throw new NullPointerException("collection is empty");
         }
 
-        collection = new ArrayList<Intervalle>();
-
+        collection = new ArrayList<Interval>();
     }
 
-
-        // Constructeur Construit une liste d'Intervalle contenant tous les éléments de la Collection.
-//    }
     /**
      * public ArrayList(Collection<? extends E> c)
      * Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator.
@@ -96,11 +91,11 @@ public class Contrainte extends ArrayList< Intervalle > {
      * Returns:
      * true.
      */
-    public boolean add( Intervalle intervalle ){
+    public boolean add( Interval interval){
         // A FAIRE
         //appeler la methode de l'array list en utilisant le super par ex : super.add parcequ'il herite de l'array list
         //
-        return  super.add(intervalle);
+        return  super.add(interval);
 
        // return contrainte1.add(intervalle);
 
@@ -119,7 +114,7 @@ public class Contrainte extends ArrayList< Intervalle > {
      * intervalle - l'intervalle supprimé de la liste.
      * préalable : null != intervalle
      */
-    public void remove( Intervalle intervalle ){
+    public void remove( Interval interval){
         // A FAIRE
     }
 
@@ -154,7 +149,7 @@ public class Contrainte extends ArrayList< Intervalle > {
       if(size() == 0) {
           return 0;
       }else{
-          return contrainte1.size();
+          return constraint1.size();
       }
 
 
@@ -176,12 +171,12 @@ public class Contrainte extends ArrayList< Intervalle > {
      * Returns:
      * une Constrainte contenant le résultat.
      */
-    public Contrainte union( Contrainte contrainte ){
+    public Constraint union(Constraint constraint){
         // A FAIRE
         //return null;
         //public ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
 
-        Contrainte result = new Contrainte();
+        Constraint result = new Constraint();
             //ArrayList<Contrainte> result = new ArrayList<Contrainte>();
         /**
 
@@ -222,7 +217,7 @@ public class Contrainte extends ArrayList< Intervalle > {
      * Returns:
      * une Constrainte contenant le résultat.
      */
-    public Contrainte intersection( Contrainte contrainte ){
+    public Constraint intersection(Constraint constraint){
         // A FAIRE
         return null;
     }
@@ -242,7 +237,7 @@ public class Contrainte extends ArrayList< Intervalle > {
      * Returns:
      * une Constrainte contenant le résultat.
      */
-    public Contrainte soustraction( Contrainte contrainte ){
+    public Constraint soustraction(Constraint constraint){
         // A FAIRE
         return null;
     }
